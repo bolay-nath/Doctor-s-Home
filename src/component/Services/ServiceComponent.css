@@ -1,0 +1,22 @@
+.serviceComponent{
+    position: relative;
+    text-align: center;
+    width: 70vh;
+}
+.serviceDescription{
+    position: relative;
+    max-width: 50%;
+    margin-left: 25%;
+}
+@media screen and (max-width: 800px) {
+    .serviceComponent {
+        margin: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .serviceDescription{
+        position: relative;
+        width: 100%;
+        align-content: center;
+    }
+}

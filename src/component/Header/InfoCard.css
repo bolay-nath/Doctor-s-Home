@@ -1,0 +1,29 @@
+.info-primary{
+    background-color: #1ccac1;
+    color: whitesmoke;
+    
+}
+.info-black{
+background-color: #3A4256;
+color: whitesmoke;
+}
+.font-icon{
+    position: relative;
+    top: 30%;
+    margin-left: 35px;
+    font-size: 3rem
+}
+.info-container{
+    height: 14vh;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.info-container:hover{
+    background-color: #3A4256;
+}
+.info-title{
+    position: relative;
+    margin: 10px;
+    margin-left: 20px;
+}

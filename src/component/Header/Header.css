@@ -1,0 +1,73 @@
+.headerContainer {
+    
+    height: 92vh;
+    top: 0px;
+}
+.headerBackground {
+    display: flex;
+    
+}
+
+.part1 {
+    height: 92vh;
+    width: 70%;
+    background-image: url(../../resorce/images/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.part2 {
+    height: 92vh;
+    width: 30%;
+    background-color: #3A4256;
+}
+
+.headerCompo {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    top: 100px;
+    display: flex;
+}
+
+.headerComponentPart1 {
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 400px;
+    width: 50%;
+    padding: 10px;
+    text-align: start;
+}
+
+.headerText {
+    margin-left: 20px;
+    margin-top: 15%;
+}
+
+.button {
+    height: 5vh;
+    background-color: #512da8;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+.headerComponentPart2 {
+    width: 50%;
+    padding: 10px;
+}
+
+.headerComponentPart2 img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 684px;
+}

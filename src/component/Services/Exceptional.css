@@ -1,0 +1,22 @@
+.exceptional-container{
+    
+    margin: 50px;
+    display: flex;
+    
+    
+}
+.exceptional-container img{
+    width: 50vh;
+}
+.exceptional-part2{
+   
+    margin-top: 5vh;
+    margin-left: 10vh;
+}
+@media screen and (max-width: 800px) {
+.exceptional-container{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}

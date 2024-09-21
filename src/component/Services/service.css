@@ -1,0 +1,30 @@
+.service-container {
+
+}
+
+.service-heading {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.service-heading h5 {
+    color: aqua;
+}
+
+.service-heading h1 {
+    font-weight: bold;
+}
+
+.serviceDataContainer {
+    margin-top: 5vh;
+    display: flex;
+}
+
+@media screen and (max-width: 800px) {
+    .serviceDataContainer {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}

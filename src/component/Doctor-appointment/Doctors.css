@@ -1,0 +1,11 @@
+.doctors-container{
+    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.doctors img{
+    height: 45vh;
+    width: 50vh;
+}
