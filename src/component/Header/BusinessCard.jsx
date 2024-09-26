@@ -1,5 +1,5 @@
 import InfoCard from "./InfoCard";
-import {faClock,faLocationDot,faPhone} from '@fortawesome/free-solid-svg-icons'
+import {faClock,faLocationDot,faPhone} from '@fortawesome/free-solid-svg-icons';
 
 const BusinessCard = () => {
     const infoData = [

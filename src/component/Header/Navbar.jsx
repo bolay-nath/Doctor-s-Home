@@ -1,12 +1,13 @@
-import "./Navbar.css"
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function NavbarMain() {
     return (
         <>
             <div className="nav-container">
                 <div className="nav-position">
-                    <a style={{color:"black"}} href="#home">Home</a>
-                    <a style={{color:"black"}} href="#home">About</a>
+                    <Link to={"/home"}><a style={{color:"black"}}>Home</a></Link>
+                    <a style={{color:"black"}} href="/appointment">Appointment</a>
                     <a style={{color:"black"}}  href="#features">Dental Service</a>
                     <a href="#pricing">Reviews</a>
                     <a href="#home">Blogs</a>
