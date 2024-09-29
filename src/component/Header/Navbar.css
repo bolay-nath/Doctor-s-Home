@@ -1,5 +1,5 @@
 .nav-container{
-    position: absolute;
+
     margin-top: 0px;
     width: 100%;
     color: rgb(22, 19, 19);
@@ -11,10 +11,10 @@
     position: relative;
     margin-top: 10px;
     margin-right: 2rem;
+    z-index: 1;
 }
 .nav-container a{
     text-decoration: none;
-    z-index: auto;
     margin: 2rem;
     color: rgb(255, 255, 255);
     padding: 10px;

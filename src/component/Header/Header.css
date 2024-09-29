@@ -1,11 +1,10 @@
 .headerContainer {
-    
     height: 92vh;
     top: 0px;
+    transform: translateY(-35px);
 }
 .headerBackground {
     display: flex;
-    
 }
 
 .part1 {
@@ -55,6 +54,7 @@
     border-radius: 3px;
     text-align: center;
     color: white;
+    transition: background-color 0.5s;
 }
 
 .button:hover {

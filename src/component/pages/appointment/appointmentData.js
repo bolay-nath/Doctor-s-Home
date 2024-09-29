@@ -1,4 +1,4 @@
-export const appointmentData = [
+const appointmentData = [
     {
         name: "Teeth Orthodontics",
         time: "8.30-10.00 PM",
@@ -42,3 +42,4 @@ export const appointmentData = [
         id: 6,
     },
 ];
+export default appointmentData

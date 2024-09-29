@@ -1,0 +1,32 @@
+.appointment-container h1{
+   
+    text-align: center;
+    color: #30DFC4;
+    margin-top: 10px;
+    
+}
+.img-component{
+    justify-content: space-evenly;
+    display: inline-block;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    align-content: space-evenly;
+   height: 50vh;
+   margin: 2rem;
+}
+.appointment-calender{
+    position: relative;
+    height: 45vh;
+    width: 50vh;
+    margin: 10px;
+    background-color: rgb(76,194,191);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.appointment-img{
+    position: relative;
+    height: 50vh;
+    width: 80vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
