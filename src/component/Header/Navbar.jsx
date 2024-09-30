@@ -9,7 +9,7 @@ function NavbarMain() {
                     <Link to={"/home"}><a style={{color:"black"}}>Home</a></Link>
                     <a style={{color:"black"}} href="/appointment">Appointment</a>
                     <a style={{color:"black"}}  href="#features">Dental Service</a>
-                    <a href="#pricing">Reviews</a>
+                    <a><Link to={"/login"}>Sign In</Link></a>
                     <a href="#home">Blogs</a>
                     <a href="#home">Contact Us</a>
                     </div>

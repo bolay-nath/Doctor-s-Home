@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './component/Home/Home';
 import Appointment from "./component/pages/appointment/Appointment"
+import LogIn from './component/pages/loginpage/LogIn';
 
 
 function TotalComponent() {
@@ -13,6 +14,8 @@ function TotalComponent() {
                 <Route path='/' element={<Home />} />
                     <Route path='/home' element={<Home />} />
                     <Route path='/appointment' element={<Appointment />} />
+                    <Route path='/login' element={<LogIn />} />
+
                 </Routes>
             </BrowserRouter>
 

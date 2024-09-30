@@ -6,7 +6,7 @@
     
 }
 .appointmentCard{
-    display: inline-block
+    display: inline-block;
     width: 30vh;
     border-radius: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
