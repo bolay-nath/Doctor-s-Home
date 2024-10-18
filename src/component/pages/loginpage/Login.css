@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
+
+    
 
 .login-container{
     background-color: #c9d6ff;
@@ -15,9 +11,14 @@
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    
 }
 
 .container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -73,6 +74,7 @@
     flex-direction: column;
     padding: 0 40px;
     height: 100%;
+    
 }
 
 .container input{

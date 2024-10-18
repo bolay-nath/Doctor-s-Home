@@ -1,10 +1,15 @@
 import { useState } from "react";
-import "./Login.css"
+import "./Login.css";
+import Navbar from "../../Header/Navbar";
 
 const LogIn = () => {
     const [toggle, setToggle] = useState(false)
     return (
+        <div>
+                <Navbar></Navbar>
+       
         <div className="login-container">
+            
             <div className={toggle? "container active": "container"}>
                 <div className="form-container sign-up">
                     <form>
@@ -52,6 +57,7 @@ const LogIn = () => {
                                             </div>
                                         </div>
                                     </div>
+                            </div>
                             </div>
                             </div>
                         );

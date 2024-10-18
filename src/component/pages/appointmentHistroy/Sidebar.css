@@ -1,0 +1,31 @@
+.sidebar {
+    background-image: linear-gradient(90deg, rgb(24, 224, 181), rgb(156, 245, 218));
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+    height: 100vh;
+    
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Add some spacing */
+  }
+  
+  .sidebar li {
+    padding: 10px;
+  }
+  
+  .sidebar li a {
+    text-decoration: none;
+    color: #eee9e9;
+    font-weight: bold;
+  }
+  
+  .main-content {
+    margin-left: 30%; /* Adjust based on sidebar width */
+    padding: 20px;
+  }

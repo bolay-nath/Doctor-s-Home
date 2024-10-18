@@ -1,0 +1,20 @@
+.appointment-history-container{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.appointment-history-calender{
+    position: relative;
+    font-size: larger;
+    height: 75vh;
+    width: 50vh;
+    margin: 10px;
+    background-color: rgb(252, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.appointment-history-part2{
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+    align-content: center;
+}

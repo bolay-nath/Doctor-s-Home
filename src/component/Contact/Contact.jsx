@@ -4,14 +4,14 @@ const Contact = () => {
         <div className="contact-container">
             <h3 style={{textAlign:"center", color:"#00FFFF"}}>CONTACT</h3>
             <h1 style={{textAlign:"center", fontWeight:"bold"}}>Always Contact us...</h1>
-            <div className="container">
+            <div className="contact-inputContainer">
                 <form action="action_page.php">
 
                     <label >First Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name.." />
+                    <input type="text" name="firstName" placeholder="Your name.." />
 
                     <label >Last Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name.." />
+                    <input type="text" name="lastLame" placeholder="Your last name.." />
 
                     <label >Country</label>
                     <select id="country" name="country">
