@@ -1,13 +1,21 @@
-import "./Sidebar.css"
+import { useState } from "react";
+import propTypes from "prop-types";
+import "./Sidebar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faChartLine, faCalendarCheck, faHospitalUser,faPrescription,faGears, faRightFromBracket,}  from "@fortawesome/free-solid-svg-icons"
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  console.log(props.position)
+  const [changeSidebar, setSidebar] = useState(props.position);
+  console.log(changeSidebar)
+  
   return (
-    <div className="sidebar">
+    <div className={changeSidebar? "sidebar2 gridItem2": "sidebar"}>
       <ul>
         <li>
-          <a href="#">
+          <a href="/dashboard">
             <span className="icon">
-              <i className="fas fa-tachometer-alt"></i>
+              <i ><FontAwesomeIcon icon={faChartLine} className="fa-thin" /></i>
             </span>
             <span className="text">Dashboard</span>
           </a>
@@ -15,7 +23,7 @@ const Sidebar = () => {
         <li>
           <a href="/appointment">
             <span className="icon">
-              <i className="fas fa-calendar-alt"></i>
+            <i ><FontAwesomeIcon icon={faCalendarCheck} className="fa-thin" /></i>
             </span>
             <span className="text">Appointment</span>
           </a>
@@ -23,7 +31,7 @@ const Sidebar = () => {
         <li>
           <a href="#">
             <span className="icon">
-              <i className="fas fa-user-friends"></i>
+           <i> <FontAwesomeIcon icon={faHospitalUser} /></i>
             </span>
             <span className="text">Patients</span>
           </a>
@@ -31,7 +39,7 @@ const Sidebar = () => {
         <li>
           <a href="#">
             <span className="icon">
-              <i className="fas fa-file-medical"></i>
+            <i> <FontAwesomeIcon icon={faPrescription} /></i>
             </span>
             <span className="text">Prescriptions</span>
           </a>
@@ -39,7 +47,7 @@ const Sidebar = () => {
         <li>
           <a href="#">
             <span className="icon">
-              <i className="fas fa-cog"></i>
+            <i> <FontAwesomeIcon icon={faGears} /></i>
             </span>
             <span className="text">Setting</span>
           </a>
@@ -47,12 +55,17 @@ const Sidebar = () => {
       </ul>
       <div className="logout">
         <a href="#">
-          <i className="fas fa-sign-out-alt"></i>
-          <span>Log Out</span>
+          <span>
+          <i> <FontAwesomeIcon icon={faRightFromBracket} /></i>
+          </span>
+        <span>Log Out</span>
         </a>
       </div>
     </div>
   );
+};
+Sidebar.propTypes = {
+  position: propTypes.node,
 };
 
 export default Sidebar;

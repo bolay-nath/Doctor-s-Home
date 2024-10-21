@@ -1,0 +1,59 @@
+
+
+.dashboard-container {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+/* .gridItem1 { grid-area: header; }
+.gridItem2 {grid-area: menu;}
+.gridItem3 { grid-area: main; }
+.gridItem4 { grid-area: right; }
+.gridItem5 { grid-area: footer; } */
+.gridItem1, .gridItem2, .gridItem3, .gridItem4, .gridItem5 {
+     /* Visual aid for debugging */
+     
+  }
+  .gridItem1{
+
+  }
+  .gridItem2{
+
+  }
+  .gridItem3{
+    border: 1px solid red;
+    margin-top: 50px;
+    border-radius: 10px;
+
+  }
+  .gridItem4{
+    top: 100px;
+  }
+
+  .dashboardDev-1, .dashboardDev-2, .dashboardDev-3, .dashboardDev-4{
+    
+  }
+  .dashboardDev-1 {
+    grid-column: 1/5;
+  }
+  .dashboardDev-2 {
+
+  }
+  .dashboardDev-3 {
+    position: relative;
+    width: 350px;
+    height: 100%;
+    padding: 20px; 
+  }
+  .dashboardDev-4 {
+    position: relative;
+    right: 0;
+    width: 900px;
+    padding: 15px;
+  }
+  

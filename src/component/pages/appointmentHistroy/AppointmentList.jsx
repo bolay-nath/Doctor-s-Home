@@ -1,17 +1,26 @@
 import { useState } from "react";
 import "./AppointmentList.css";
 import propTypes from "prop-types";
-const AppointmentList = ({ list }) => {
+const AppointmentList = ({ list, position }) => {
   //this state use for toggle
   const [condition, setCondition] = useState(true);
-  console.log(list);
   const [status, setStatus] = useState('');
   const [userId, setUserId] = useState('USER_ID_PLACEHOLDER');
+  //finished
 
-  const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior (page reload)
-    console.log(event)
-    //Make a POST request to your server to update the status in MongoDB
+  //this state use for multiple use of this page
+  const [changeSidebar, setSidebar] = useState(position);
+  // this is use for update the status
+  const updateData = {};
+  const [selectedOption, setSelectedOption] = useState(updateData);
+  const handleChange = (e) => {
+    updateData.status = e.target.value;
+    setSelectedOption(updateData);
+  };
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    console.log(updateData); // Logs the selected option to the console
     const response = await fetch('/update-status', {
       method: 'POST',
       headers: {
@@ -21,49 +30,41 @@ const AppointmentList = ({ list }) => {
     });
 
     const result = await response.json();
-    alert(result.message);  // Alert the result to the user
+    alert(result.message); 
   };
-  //finished
   return (
-    <div className="appointment-list-container ">
+    <div className={changeSidebar ? "gridItem4" : "appointment-list-container"}>
       <div>
         <h1>Appointment {list.length}</h1>
         <table>
           <tr>
             <th>Name</th>
-            <th className={condition ? "displayBlock" : "displayNone"}>
-              Schedule
+            <th>
+              Email
             </th>
-            <th className={condition ? "displayNone" : "displayBlock"}>
-              Status
+            <th>
+              {condition? "Time" : "Status"}
             </th>
+
           </tr>
         </table>
 
         {list.map((lis) => (
-          <table key={lis._id}>
+          <table key={lis._id} style={{ border: "1px solid black" }}>
             <tr>
               <td>{lis.name}</td>
-              <td className={condition ? "displayBlock" : "displayNone"}>
-                {lis.time}
-              </td>
-              <td className={condition ? "displayNone" : "displayBlock"}>
-              <form onSubmit={handleSubmit}>
-        <label htmlFor="status">Select Status:</label>
-        <select
-          id="status"
-          value={status}        // Controlled input: value is tied to the status state
-          onChange={(e) => setStatus(e.target.value)} // Update state on change
-        >
-          <option value="">--Select Status--</option>
-          <option value="pending">Pending</option>
-          <option value="in-progress">In Progress</option>
-          <option value="complete">Complete</option>
-        </select>
-
-        <button type="submit">Update Status</button>
-      </form>
-              </td>
+              <td>{lis.email}</td>
+              <td>{condition? lis.time:
+              
+                <form className="submitOption" onSubmit={handleSubmit} onChange={()=>setSelectedOption(updateData.id=lis._id)}>
+                  <select value={selectedOption} onChange={handleChange}>
+                    <option value={`${lis.status}`} >{lis.status}</option>
+                    <option value="in-progress" >In Progress</option>
+                    <option value="complete" >Complete</option>
+                  </select>
+                  <button type="submit">Update</button>
+                </form>
+              }</td>
             </tr>
           </table>
         ))}
@@ -79,19 +80,12 @@ const AppointmentList = ({ list }) => {
     </div>
   );
 };
-//handel the form action
 
-function UpdateStatusForm() {
-  // State to hold the selected status and user ID
-  const [status, setStatus] = useState("");
-  const [userId, setUserId] = useState("USER_ID_PLACEHOLDER"); // Replace with actual user ID
-
-  // Handle form submission
-}
 //finished
 
 AppointmentList.propTypes = {
   list: propTypes.node,
+  position: propTypes.node,
 };
 
 export default AppointmentList;

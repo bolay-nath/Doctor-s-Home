@@ -1,9 +1,10 @@
 import "./DashBoardHeader.css";
 
 const DashBoardHeader = () => {
+    
     return (
-        <div className="dashBoardHeader-container">
-            <div className="dashBoardHeader-item">
+        
+            <div className="dashBoardHeader-item gridItem1">
                 <div className="dashBoard-item-1 dashBoard-item">
                     <h2>50</h2>{" "}
                     <p>
@@ -29,7 +30,7 @@ const DashBoardHeader = () => {
                     </p>
                 </div>
             </div>
-        </div>
+            
     );
 };
 
