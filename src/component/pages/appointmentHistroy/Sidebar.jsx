@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faChartLine, faCalendarCheck, faHospitalUser,faPrescription,faGears, faRightFromBracket,}  from "@fortawesome/free-solid-svg-icons"
 
 const Sidebar = (props) => {
-  console.log(props.position)
+  
   const [changeSidebar, setSidebar] = useState(props.position);
-  console.log(changeSidebar)
+  
   
   return (
     <div className={changeSidebar? "sidebar2 gridItem2": "sidebar"}>

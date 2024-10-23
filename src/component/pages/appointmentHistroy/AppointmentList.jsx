@@ -4,34 +4,40 @@ import propTypes from "prop-types";
 const AppointmentList = ({ list, position }) => {
   //this state use for toggle
   const [condition, setCondition] = useState(true);
-  const [status, setStatus] = useState('');
-  const [userId, setUserId] = useState('USER_ID_PLACEHOLDER');
+  
   //finished
 
   //this state use for multiple use of this page
   const [changeSidebar, setSidebar] = useState(position);
   // this is use for update the status
   const updateData = {};
-  const [selectedOption, setSelectedOption] = useState(updateData);
-  const handleChange = (e) => {
+  //when change the status from  user.
+  const handleChange = async(e) => {
+    console.log(e.target.value)
     updateData.status = e.target.value;
-    setSelectedOption(updateData);
+    
+    console.log(updateData.status)
+    console.log(updateData.id)
   };
-
+  
+//when user change and submit the status.
   const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(updateData); // Logs the selected option to the console
-    const response = await fetch('/update-status', {
+    const _id = updateData.id;
+    const status = updateData.status;
+    const response = await fetch('http://localhost:3000/updateStatus', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ userId, status }), // Send userId and status as JSON
+      body: JSON.stringify({ _id, status }), // Send userId and status as JSON
     });
 
     const result = await response.json();
     alert(result.message); 
   };
+  //finished 
   return (
     <div className={changeSidebar ? "gridItem4" : "appointment-list-container"}>
       <div>
@@ -55,9 +61,9 @@ const AppointmentList = ({ list, position }) => {
               <td>{lis.name}</td>
               <td>{lis.email}</td>
               <td>{condition? lis.time:
-              
-                <form className="submitOption" onSubmit={handleSubmit} onChange={()=>setSelectedOption(updateData.id=lis._id)}>
-                  <select value={selectedOption} onChange={handleChange}>
+              //in the form cond when i change the status i got the id and set id into a SelectOption.
+                <form className="submitOption" onSubmit={handleSubmit} >
+                  <select  onChange={handleChange} onClick={()=>updateData.id=lis._id}>
                     <option value={`${lis.status}`} >{lis.status}</option>
                     <option value="in-progress" >In Progress</option>
                     <option value="complete" >Complete</option>

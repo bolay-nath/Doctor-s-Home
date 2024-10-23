@@ -11,7 +11,7 @@ function NavbarMain() {
                     <Link to={"/appointmentHistory"}style={{color:"black"}}>Dental Service</Link>
                     <Link to={"/login"}>Sign In</Link>
                     <Link to={"/dashboard"}>Dash Board</Link>
-                    <a href="#home">Contact Us</a>
+                    <Link to={"/addDoctor"}>Contact Us</Link>
                     </div>
             </div>
         </>

@@ -6,6 +6,7 @@ import Appointment from "./component/pages/appointment/Appointment"
 import LogIn from './component/pages/loginpage/LogIn';
 import AppointmentHistory from './component/pages/appointmentHistroy/AppointmentHistory';
 import DashBoard from './component/pages/DashBoard/DashBoard';
+import AddDoctor from './component/pages/addDoctor/AddDoctor';
 
 
 function TotalComponent() {
@@ -19,6 +20,7 @@ function TotalComponent() {
                     <Route path='/login' element={<LogIn />} />
                     <Route path='/appointmentHistory' element={<AppointmentHistory />} />
                     <Route path='/dashboard' element={<DashBoard />} />
+                    <Route path='/addDoctor' element={<AddDoctor />} />
 
                 </Routes>
             </BrowserRouter>

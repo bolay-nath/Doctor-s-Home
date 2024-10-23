@@ -1,0 +1,10 @@
+.addDoctor-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+.addDoctor-form{
+    margin: 20px;
+    text-align: left;
+    justify-content: space-evenly;
+}
