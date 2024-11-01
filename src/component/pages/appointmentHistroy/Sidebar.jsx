@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import "./Sidebar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faChartLine, faCalendarCheck, faHospitalUser,faPrescription,faGears, faRightFromBracket,}  from "@fortawesome/free-solid-svg-icons"
-
+import { Link } from "react-router-dom";
 const Sidebar = (props) => {
   
   const [changeSidebar, setSidebar] = useState(props.position);
@@ -13,53 +13,53 @@ const Sidebar = (props) => {
     <div className={changeSidebar? "sidebar2 gridItem2": "sidebar"}>
       <ul>
         <li>
-          <a href="/dashboard">
+          <Link to={"/dashboard"}>
             <span className="icon">
               <i ><FontAwesomeIcon icon={faChartLine} className="fa-thin" /></i>
             </span>
             <span className="text">Dashboard</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/appointment">
+          <Link to="/appointment">
             <span className="icon">
             <i ><FontAwesomeIcon icon={faCalendarCheck} className="fa-thin" /></i>
             </span>
             <span className="text">Appointment</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <span className="icon">
            <i> <FontAwesomeIcon icon={faHospitalUser} /></i>
             </span>
             <span className="text">Patients</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <span className="icon">
             <i> <FontAwesomeIcon icon={faPrescription} /></i>
             </span>
             <span className="text">Prescriptions</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <span className="icon">
             <i> <FontAwesomeIcon icon={faGears} /></i>
             </span>
             <span className="text">Setting</span>
-          </a>
+          </Link>
         </li>
       </ul>
       <div className="logout">
-        <a href="#">
+        <Link to="#">
           <span>
           <i> <FontAwesomeIcon icon={faRightFromBracket} /></i>
           </span>
         <span>Log Out</span>
-        </a>
+        </Link>
       </div>
     </div>
   );

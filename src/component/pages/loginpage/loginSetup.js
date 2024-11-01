@@ -2,49 +2,60 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthP
 import { Authenticate } from "./firebaseConfig";
 
 
+
 const provider = new GoogleAuthProvider();
 
 
 export const signWithEmailAndPassword = (email, password) => {
-
-    signInWithEmailAndPassword(Authenticate, email, password)
+    return new Promise((resolve,reject)=>{
+        signInWithEmailAndPassword(Authenticate, email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
             console.log(user)
+            resolve({user})
             // ...
         })
         .catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
+            console.log(error.message)
+            reject({error})
         });
+    })
+   
 };
-
+//finished
 export const createEmailAndPassword = (email, password) => {
-    createUserWithEmailAndPassword(Authenticate, email, password)
+    return new Promise((resolve,reject)=>{
+        createUserWithEmailAndPassword(Authenticate, email, password)
         .then((userCredential) => {
-            // Signed up 
+            //Signed up 
             const user = userCredential.user;
             console.log(user)
+            resolve({ user});
             // ...
         })
         .catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
+            
+            reject({error})
+            console.log(error.message)
             // ..
         });
-}
+    })
+    
+};
+//finished
+    
 export const signWithPopupGoogle = () => {
+    //this return line use for every function have to gave a return promise;
     return new Promise((resolve,reject)=>{
         signInWithPopup(Authenticate, provider)
         .then((result) => {
             // This gives you a Google Access Token. You can use it to access the Google API.
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
-            console.log(token)
             // The signed-in user info.
             const user = result.user;
-            console.log(user)
+            // Send a promise
             resolve({ user, token });
             
             // IdP data available using getAdditionalUserInfo(result)
@@ -57,7 +68,6 @@ export const signWithPopupGoogle = () => {
             const email = error.customData.email;
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
-            console.log(errorCode,errorMessage,email,credential)
             reject({ errorCode, errorMessage, email, credential });
 
             // ...
@@ -65,6 +75,7 @@ export const signWithPopupGoogle = () => {
     })
     
 };
+// this thing not use this time because this authentication need facebook developer setup. 
 export const logInWithFacebook = () => {
     signInWithPopup(Authenticate, provider)
         .then((result) => {
